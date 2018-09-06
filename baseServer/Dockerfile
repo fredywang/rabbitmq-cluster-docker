@@ -1,7 +1,11 @@
 FROM centos:latest
 MAINTAINER FredgWang FredyWang2005@gmail.com
 
-RUN yum install -y wget unzip tar
+RUN yum install -y epel-release
+
+RUN yum -y update
+
+RUN yum install -y wget unzip tar telnet htop
 
 RUN rpm -Uvh https://github.com/rabbitmq/erlang-rpm/releases/download/v20.3.8.6/erlang-20.3.8.6-1.el7.centos.x86_64.rpm
 

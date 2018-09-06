@@ -7,6 +7,7 @@ rabbit1:
   environment:
     - RABBITMQ_DEFAULT_USER=rabbitmq
     - RABBITMQ_DEFAULT_PASS=rabbitmq
+    - RAM_NODE=true
 rabbit2:
   image: rabbitmq:3.7.7
   hostname: rabbit2
@@ -31,3 +32,4 @@ rabbit3:
    - CLUSTER_WITH=rabbit1
   ports:
         - "5674:5672"
+        - "15674:15672"
